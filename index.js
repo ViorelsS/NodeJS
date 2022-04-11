@@ -1,13 +1,18 @@
-const numero = 3;
+/*
+    moduli (codice incapsulato) == pacchetti == dipendenze == dependencies
+*/
 
-if (numero > 2) {
-    console.log("il numero è maggiore di 2");
-} else if (numero == 2) {
-    console.log("il numero è 2");
-} else {
-    console.log("il numero è minore di 2");
-}
+// Moduli interni --> fatti da noi
+// Moduli built-in
+// const saluta = require("./utils");
+// const nomi = require("./nomi");
 
-for (i = 0; i < 10; i++) {
-    console.log(i);
-}
+// console.log(nomi.persona1);
+
+// saluta(nomi.persona1);
+// saluta("Anna");
+// saluta(nomi.persona2);
+
+const nomi = require("./nomi");
+
+console.log(nomi);
