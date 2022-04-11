@@ -1,18 +1,40 @@
-/*
-    moduli (codice incapsulato) == pacchetti == dipendenze == dependencies
-*/
+const os = require("os");
 
-// Moduli interni --> fatti da noi
-// Moduli built-in
-// const saluta = require("./utils");
-// const nomi = require("./nomi");
+console.log(os.userInfo()); //Info dell'user corrente
+console.log(os.uptime()); //Da quanto tempo il computer è acceso
+console.log(os.version());
+console.log(os.arch());
 
-// console.log(nomi.persona1);
+console.log("\n\n\n");
 
-// saluta(nomi.persona1);
-// saluta("Anna");
-// saluta(nomi.persona2);
+const prova = {
+    nome: os.type(),
+    release: os.release(),
+    memoria: os.totalmem(),
+    disponibile: os.freemem(),
+};
 
-const nomi = require("./nomi");
+console.log(prova);
 
-console.log(nomi);
+const path = require("path");
+console.log("\n\nSEPARATORE:", path.sep);
+
+//join ci permette di unire
+//questo path è relativo --> si parte dalla posizione attuale
+const percorsoFile = path.join("./cartella", "sottocartella", "prova.txt");
+console.log(percorsoFile);
+
+//Basename -->nome del file e basta
+
+console.log(path.basename(percorsoFile));
+
+//resolve --> ci permette di creare percorsi assoluti
+const percorsoAssoluto = path.resolve(
+    //Percorso assoluto da Users fino a prova.txt
+    __dirname,
+    "cartella",
+    "sottocartella",
+    "prova.txt"
+);
+
+console.log(percorsoAssoluto);
